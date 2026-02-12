@@ -1,0 +1,112 @@
+body{
+margin:0;
+font-family:Segoe UI;
+background:#0d1117;
+color:white;
+}
+
+/* Header */
+.header{
+text-align:center;
+padding:30px 20px;
+background:linear-gradient(90deg,#000,#111,#000);
+border-bottom:1px solid #222;
+}
+
+.header h1{
+margin:0;
+font-size:34px;
+}
+
+.header p{
+opacity:0.8;
+margin-top:6px;
+}
+
+/* Grid */
+.results-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+padding:40px;
+}
+
+/* Party Card Base */
+.party-card{
+position:relative;
+background:#161b22;
+padding:30px;
+border-radius:18px;
+text-align:center;
+overflow:hidden;
+transition:0.4s;
+cursor:pointer;
+}
+
+.party-card:hover{
+transform:translateY(-10px) scale(1.02);
+}
+
+/* Logo */
+.party-card img{
+width:110px;
+height:110px;
+object-fit:contain;
+margin-bottom:15px;
+}
+
+/* Party Name */
+.party-card h2{
+margin:5px 0;
+font-size:24px;
+}
+
+/* Seat Number */
+.seat{
+font-size:42px;
+font-weight:bold;
+margin-top:5px;
+}
+
+/* Glow Effect */
+.glow{
+position:absolute;
+width:200%;
+height:200%;
+top:-50%;
+left:-50%;
+background:radial-gradient(circle,rgba(255,255,255,0.12),transparent 60%);
+animation:rotateGlow 10s linear infinite;
+}
+
+@keyframes rotateGlow{
+from{transform:rotate(0deg);}
+to{transform:rotate(360deg);}
+}
+
+/* Party Colors */
+.bnp{
+border:2px solid #ff4d4d;
+box-shadow:0 0 25px rgba(255,0,0,0.4);
+}
+
+.jamaat{
+border:2px solid #00ff9d;
+box-shadow:0 0 25px rgba(0,255,150,0.4);
+}
+
+.others{
+border:2px solid #00c8ff;
+box-shadow:0 0 25px rgba(0,200,255,0.4);
+}
+
+/* Mobile */
+@media(max-width:600px){
+.results-container{
+padding:20px;
+gap:20px;
+}
+.header h1{
+font-size:26px;
+}
+}
