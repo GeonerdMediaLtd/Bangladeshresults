@@ -3,44 +3,91 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bangladesh Election Results | NewsGrid</title>
+<title>Bangladesh Election Dashboard</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header class="header">
-<h1>🇧🇩 Bangladesh Election Results</h1>
-<p>Live Political Dashboard • NewsGrid by GeoNerd</p>
+  🇧🇩 Bangladesh Election Dashboard
 </header>
 
-<div class="results-container">
+<!-- Parliament Arc -->
+<section class="parliament-section">
 
-<!-- BNP -->
-<div class="party-card bnp">
-<div class="glow"></div>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/BNP_logo.png/960px-BNP_logo.png">
-<h2>BNP+</h2>
-<p class="seat">59</p>
-</div>
+  <h2>Total Seats</h2>
+  <div class="seat-total">76</div>
 
-<!-- Jamaat -->
-<div class="party-card jamaat">
-<div class="glow"></div>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Bangladesh_Jamaat-e-_Islami_Logo_%28cropped%29.png/960px-Bangladesh_Jamaat-e-_Islami_Logo_%28cropped%29.png">
-<h2>Jamaat+</h2>
-<p class="seat">15</p>
-</div>
+  <div class="parliament">
 
-<!-- Others -->
-<div class="party-card others">
-<div class="glow"></div>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Ballotbox325CSCVL.png/640px-Ballotbox325CSCVL.png">
-<h2>Others</h2>
-<p class="seat">2</p>
-</div>
+    <!-- BNP -->
+    <div class="dot bnp"></div>
 
-</div>
+    <!-- Jamaat -->
+    <div class="dot jamaat"></div>
+
+    <!-- Others -->
+    <div class="dot others"></div>
+
+    <!-- Grey remaining -->
+    <div class="dot grey"></div>
+
+  </div>
+
+</section>
+
+<!-- Party Cards -->
+<section class="party-section">
+
+  <div class="party-card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/BNP_logo.png/960px-BNP_logo.png">
+    <h3>BNP+</h3>
+    <p class="seat">59 Seats</p>
+  </div>
+
+  <div class="party-card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Bangladesh_Jamaat-e-_Islami_Logo_%28cropped%29.png/960px-Bangladesh_Jamaat-e-_Islami_Logo_%28cropped%29.png">
+    <h3>Jamaat+</h3>
+    <p class="seat">15 Seats</p>
+  </div>
+
+  <div class="party-card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Ballotbox325CSCVL.png/640px-Ballotbox325CSCVL.png">
+    <h3>Others</h3>
+    <p class="seat">2 Seats</p>
+  </div>
+
+</section>
+
+<!-- Party Bars -->
+<section class="bars">
+
+  <div class="bar">
+    <span>BNP+</span>
+    <div class="bar-bg">
+      <div class="bar-fill bnp-fill" style="width:78%"></div>
+    </div>
+    <span>59</span>
+  </div>
+
+  <div class="bar">
+    <span>Jamaat+</span>
+    <div class="bar-bg">
+      <div class="bar-fill jamaat-fill" style="width:20%"></div>
+    </div>
+    <span>15</span>
+  </div>
+
+  <div class="bar">
+    <span>Others</span>
+    <div class="bar-bg">
+      <div class="bar-fill others-fill" style="width:3%"></div>
+    </div>
+    <span>2</span>
+  </div>
+
+</section>
 
 </body>
 </html>
