@@ -1,117 +1,68 @@
-body{
-font-family:Arial;
-background:#0d1117;
-color:white;
-margin:0;
-}
+:root {
+            --bnp-green: #006a4e;
+            --jam-green: #00563b;
+            --victory-gold: #ffd700;
+            --breaking-red: #cc0000;
+        }
 
-.header{
-text-align:center;
-padding:20px;
-font-size:24px;
-font-weight:bold;
-background:#111;
-}
+        body { margin: 0; background: #000; color: white; font-family: 'Oswald', sans-serif; overflow: hidden; }
 
-/* Parliament */
+        /* Scene Layout */
+        .scene {
+            position: absolute; width: 100vw; height: 100vh;
+            display: flex; align-items: flex-end; justify-content: center;
+            opacity: 0; transition: opacity 1s ease-in-out;
+        }
+        .active { opacity: 1; z-index: 10; }
 
-.parliament-section{
-text-align:center;
-padding:30px;
-}
+        /* Portrait Styling */
+        .portrait-frame {
+            position: absolute; bottom: 0; height: 92vh;
+            display: flex; justify-content: center; width: 100%;
+        }
+        .portrait {
+            height: 100%; object-fit: contain;
+            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        }
 
-.seat-total{
-font-size:40px;
-font-weight:bold;
-margin-bottom:20px;
-}
+        /* Hover Detail Panel */
+        .info-panel {
+            position: absolute; left: 3%; top: 25%; width: 300px;
+            background: rgba(0,0,0,0.8); border-left: 5px solid var(--victory-gold);
+            padding: 25px; border-radius: 0 15px 15px 0;
+            transform: translateX(-110%); transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 100; backdrop-filter: blur(8px);
+        }
+        .scene:hover .info-panel { transform: translateX(0); }
 
-.parliament{
-width:300px;
-height:150px;
-margin:0 auto;
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-align-items:flex-end;
-}
+        /* Lower Third Bar */
+        .lower-third {
+            width: 100%; background: linear-gradient(transparent, rgba(0,0,0,0.95) 40%);
+            padding: 50px 0 80px 8%; z-index: 20;
+            border-bottom: 12px solid var(--bnp-green);
+        }
+        .jam-scene .lower-third { border-bottom-color: #333; }
 
-/* Seat Dots */
+        .seat-number { font-size: 8rem; font-weight: 900; line-height: 0.7; margin: 0; }
+        .bnp-c { color: var(--victory-gold); text-shadow: 0 0 30px rgba(0,106,78,0.5); }
+        .jam-c { color: #999; }
 
-.dot{
-width:10px;
-height:10px;
-border-radius:50%;
-margin:2px;
-}
+        /* News Ticker */
+        .breaking-bar {
+            position: fixed; bottom: 0; width: 100%; height: 45px;
+            background: #111; display: flex; align-items: center; z-index: 200;
+            border-top: 2px solid var(--victory-gold);
+        }
+        .breaking-label {
+            background: var(--breaking-red); padding: 0 20px; height: 100%;
+            display: flex; align-items: center; font-weight: 900; font-style: italic;
+        }
+        .ticker-content { flex: 1; overflow: hidden; white-space: nowrap; font-size: 1.1rem; }
 
-.bnp{background:#7a3cff;}
-.jamaat{background:#ff4d2d;}
-.others{background:#00c2a8;}
-.grey{background:#555;}
-
-/* Party Cards */
-
-.party-section{
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-padding:20px;
-}
-
-.party-card{
-background:#161b22;
-padding:20px;
-border-radius:12px;
-text-align:center;
-width:150px;
-box-shadow:0 0 15px rgba(0,0,0,0.5);
-}
-
-.party-card img{
-width:60px;
-height:60px;
-object-fit:contain;
-}
-
-.seat{
-font-size:20px;
-font-weight:bold;
-margin-top:10px;
-}
-
-/* Bars */
-
-.bars{
-padding:20px;
-max-width:600px;
-margin:auto;
-}
-
-.bar{
-display:flex;
-align-items:center;
-gap:10px;
-margin:15px 0;
-}
-
-.bar span{
-width:80px;
-}
-
-.bar-bg{
-flex:1;
-height:12px;
-background:#333;
-border-radius:6px;
-overflow:hidden;
-}
-
-.bar-fill{
-height:100%;
-}
-
-.bnp-fill{background:#7a3cff;}
-.jamaat-fill{background:#ff4d2d;}
-.others-fill{background:#00c2a8;}
+        /* Graphics */
+        .spotlight {
+            position: absolute; top: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 20%, rgba(255,255,255,0.08) 0%, transparent 55%);
+            pointer-events: none;
+        }
