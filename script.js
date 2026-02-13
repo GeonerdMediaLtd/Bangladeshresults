@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let current = 0;
     const scenes = document.querySelectorAll('.scene');
+    const delay = 4000; // 4 seconds
 
     function rotate() {
         scenes[current].classList.remove('active');
@@ -9,6 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
         scenes[current].classList.add('active');
     }
 
-    setInterval(rotate, 6000);
+    // Start after 4 seconds (so BNP stays visible first)
+    setTimeout(() => {
+        rotate();
+        setInterval(rotate, delay);
+    }, delay);
 
 });
