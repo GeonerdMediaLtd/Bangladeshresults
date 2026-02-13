@@ -172,3 +172,64 @@ body {
     white-space: nowrap;
     font-size: 1.1rem;
 }
+
+/* ============================
+   MOBILE OPTIMIZATION
+============================ */
+@media (max-width: 768px) {
+
+    /* Make portraits smaller */
+    .portrait-frame {
+        height: 65vh;
+    }
+
+    .portrait {
+        height: 100%;
+        max-width: 85%;
+    }
+
+    /* Info panel always visible */
+    .info-panel {
+        transform: translateX(0) !important;
+        top: 8%;
+        left: 50%;
+        transform: translateX(-50%) !important;
+        width: 90%;
+        border-radius: 15px;
+        text-align: center;
+    }
+
+    /* Center lower-third */
+    .lower-third {
+        padding: 30px 0 60px 0;
+        text-align: center;
+    }
+
+    .seat-number {
+        font-size: 5rem;
+    }
+
+    .name {
+        font-size: 1.4rem;
+    }
+
+    .name span {
+        font-size: 1rem;
+    }
+
+    .label {
+        font-size: 1.1rem;
+        letter-spacing: 3px;
+    }
+
+    /* Breaking bar text smaller */
+    .ticker-content {
+        font-size: 0.85rem;
+    }
+
+    .breaking-label {
+        font-size: 0.8rem;
+        padding: 0 12px;
+    }
+
+}
