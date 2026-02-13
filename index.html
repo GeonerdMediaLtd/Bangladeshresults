@@ -1,50 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Election Result Animation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700;900&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Breaking News Bar -->
 <div class="breaking-bar">
     <div class="breaking-label">BREAKING NEWS</div>
     <div class="ticker-content">
         <marquee scrollamount="10">
-            • BNP ALLIANCE SECURES 212 SEATS — CROSSES TWO-THIRDS MAJORITY • TARIQUE RAHMAN TO BE SWORN IN AS PRIME MINISTER • JAMAAT-E-ISLAMI TRAILING WITH 70 SEATS • PM MODI AND REGIONAL LEADERS CONGRATULATE BNP ON HISTORIC LANDSLIDE •
+            • BNP ALLIANCE SECURES 212 SEATS — CROSSES TWO-THIRDS MAJORITY •
+            TARIQUE RAHMAN TO BE SWORN IN AS PRIME MINISTER •
+            JAMAAT-E-ISLAMI TRAILING WITH 70 SEATS •
+            PM MODI AND REGIONAL LEADERS CONGRATULATE BNP ON HISTORIC LANDSLIDE •
         </marquee>
     </div>
 </div>
 
-<div class="scene active" id="scene-bnp" onclick="location.href='https://yournews.com/bnp-win'">
+<!-- Scene 1 -->
+<div class="scene active" id="scene-bnp">
     <div class="spotlight"></div>
+
     <div class="portrait-frame">
         <img src="https://www.aljazeera.com/wp-content/uploads/2024/01/349B2U6-highres-1704353492.jpg?resize=1800%2C1800" class="portrait">
     </div>
 
     <div class="info-panel">
-        <h2 style="color:var(--victory-gold); margin:0 0 10px 0;">VICTORY PROFILE</h2>
+        <h2>VICTORY PROFILE</h2>
         <p><b>Total Seats:</b> 212 / 300</p>
         <p><b>Popular Vote:</b> Leading in 8 Divisions</p>
         <p><b>Government:</b> Forming Cabinet Shortly</p>
-        <p style="font-size:0.9rem; color: #00ff00; margin-top:15px;">● DEFINITIVE MANDATE</p>
+        <p class="status success">● DEFINITIVE MANDATE</p>
     </div>
 
     <div class="lower-third">
-        <p style="margin:0; font-size:1.5rem; letter-spacing:5px; color:var(--victory-gold);">WINNER</p>
+        <p class="label">WINNER</p>
         <h1 class="seat-number bnp-c">181</h1>
-        <div style="font-size: 2.2rem; font-weight: bold;">TARIQUE RAHMAN <span style="font-weight: 200; font-size: 1.5rem;">| BNP</span></div>
+        <div class="name">TARIQUE RAHMAN <span>| BNP</span></div>
     </div>
 </div>
 
-<div class="scene jam-scene" id="scene-jamaat" onclick="location.href='https://yournews.com/jamaat-stats'">
+<!-- Scene 2 -->
+<div class="scene jam-scene" id="scene-jamaat">
     <div class="portrait-frame">
-        <img src="https://thediplomat.com/wp-content/uploads/2024/09/sizes/td-story-s-1/thediplomat_2024-09-25-130242.jpg" 
-             class="portrait" style="filter: grayscale(0.8) brightness(0.6);">
+        <img src="https://thediplomat.com/wp-content/uploads/2024/09/sizes/td-story-s-1/thediplomat_2024-09-25-130242.jpg" class="portrait dim">
     </div>
 
-    <div class="info-panel" style="border-color: #666;">
-        <h2 style="color:#aaa; margin:0 0 10px 0;">POST-POLL DATA</h2>
+    <div class="info-panel gray">
+        <h2>POST-POLL DATA</h2>
         <p><b>Total Seats:</b> 61 / 300</p>
         <p><b>Role:</b> Principal Opposition</p>
         <p><b>Swing:</b> Underperforming Forecasts</p>
-        <p style="font-size:0.9rem; color: #888; margin-top:15px;">● CONCESSION STATEMENT ISSUED</p>
+        <p class="status muted">● CONCESSION STATEMENT ISSUED</p>
     </div>
 
-    <div class="lower-third">
-        <p style="margin:0; font-size:1.5rem; letter-spacing:5px; color:#888;">TRAILING</p>
-        <h1 class="seat-number jam-count">70</h1>
-        <div style="font-size: 2.2rem; font-weight: bold;">DR. SHAFIQUR RAHMAN <span style="font-weight: 200; font-size: 1.5rem;">| JAMAAT</span></div>
+    <div class="lower-third gray-border">
+        <p class="label muted">TRAILING</p>
+        <h1 class="seat-number jam-c">70</h1>
+        <div class="name">DR. SHAFIQUR RAHMAN <span>| JAMAAT</span></div>
     </div>
 </div>
+
+<!-- JS -->
+<script src="script.js"></script>
+
+</body>
+</html>
