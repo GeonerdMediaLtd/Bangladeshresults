@@ -1,0 +1,174 @@
+:root {
+    --bnp-green: #006a4e;
+    --jam-green: #00563b;
+    --victory-gold: #ffd700;
+    --breaking-red: #cc0000;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: black;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    overflow: hidden;
+}
+
+/* Scene Layout */
+.scene {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.scene.active {
+    opacity: 1;
+    z-index: 10;
+}
+
+/* Portrait */
+.portrait-frame {
+    position: absolute;
+    bottom: 0;
+    height: 92vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.portrait {
+    height: 100%;
+    object-fit: contain;
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+.dim {
+    filter: grayscale(0.8) brightness(0.6);
+}
+
+/* Info Panel */
+.info-panel {
+    position: absolute;
+    left: 3%;
+    top: 25%;
+    width: 300px;
+    background: rgba(0,0,0,0.85);
+    border-left: 5px solid var(--victory-gold);
+    padding: 25px;
+    border-radius: 0 15px 15px 0;
+    transform: translateX(-110%);
+    transition: 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(8px);
+}
+
+.scene:hover .info-panel {
+    transform: translateX(0);
+}
+
+.info-panel.gray {
+    border-color: #666;
+}
+
+.info-panel h2 {
+    margin-top: 0;
+    color: var(--victory-gold);
+}
+
+/* Lower Third */
+.lower-third {
+    width: 100%;
+    background: linear-gradient(transparent, rgba(0,0,0,0.95) 40%);
+    padding: 50px 0 80px 8%;
+    border-bottom: 12px solid var(--bnp-green);
+}
+
+.gray-border {
+    border-bottom-color: #333;
+}
+
+.label {
+    margin: 0;
+    font-size: 1.5rem;
+    letter-spacing: 5px;
+    color: var(--victory-gold);
+}
+
+.seat-number {
+    font-size: 8rem;
+    font-weight: 900;
+    margin: 0;
+    line-height: 0.8;
+}
+
+.bnp-c {
+    color: var(--victory-gold);
+    text-shadow: 0 0 30px rgba(0,106,78,0.6);
+}
+
+.jam-c {
+    color: #aaa;
+}
+
+.name {
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+
+.name span {
+    font-weight: 200;
+    font-size: 1.5rem;
+}
+
+/* Status */
+.status {
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+.success { color: #00ff00; }
+.muted { color: #888; }
+
+/* Spotlight */
+.spotlight {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 20%, rgba(255,255,255,0.08), transparent 55%);
+}
+
+/* Breaking Bar */
+.breaking-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    background: #111;
+    display: flex;
+    align-items: center;
+    z-index: 200;
+    border-top: 2px solid var(--victory-gold);
+}
+
+.breaking-label {
+    background: var(--breaking-red);
+    padding: 0 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-weight: 900;
+    font-style: italic;
+}
+
+.ticker-content {
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 1.1rem;
+}
